@@ -1,7 +1,7 @@
 import React from 'react'
-import './footer.css'
+import '../styles/components/footer.css'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
-import logo from '../../assets/images/logo.png'
+import logo from '../assets/images/components/logo.png'
 import { Link } from 'react-router-dom'
 
 const quick__links = [

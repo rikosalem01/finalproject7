@@ -1,13 +1,14 @@
 import React from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import "../styles/login.css";
+import "../styles/pages/login.css";
 
-import registerImg from "../assets/images/register.png";
-import userIcon from "../assets/images/user.png";
+import registerImg from "../assets/images/pages/register.png";
+import userIcon from "../assets/images/pages/user.png";
 
-const Register = () => {
-  const handleChange = (e) => {};
+const Register = (e) => {
+  
+  const handleChange = () => {};
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -31,10 +32,13 @@ const Register = () => {
 
                 <Form onSubmit={handleClick}>
                   <FormGroup>
-                    <input type="text" placeholder="Username" required id="username" onChange={handleChange} />
+                    <input type="text" placeholder="Email" required id="email" onChange={handleChange} />
                   </FormGroup>
                   <FormGroup>
                     <input type="Password" placeholder="Password" required id="password" onChange={handleChange} />
+                  </FormGroup>
+                  <FormGroup>
+                    <input type="Password" placeholder="Password Confirmation" required id="password" onChange={handleChange} />
                   </FormGroup>
                   <Button className="btn secondary__btn auth__btn" type="Submit">
                     Register

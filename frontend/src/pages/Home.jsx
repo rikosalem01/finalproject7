@@ -1,15 +1,15 @@
 import React from 'react'
 import { Container, Row, Col} from 'reactstrap'
 import Subtitle from '../shared/Subtitle'
-import world from '../assets/images/world.png'
-import heroVideo from '../assets/images/hero-video.mp4'
-import experienceImg from '../assets/images/experience.png'
-import '../styles/home.css'
+import world from '../assets/images/pages/world.png'
+import heroVideo from '../assets/images/pages/hero-video.mp4'
+import experienceImg from '../assets/images/pages/experience.png'
+import '../styles/pages/home.css'
 import SearchBar from '../shared/SearchBar'
-import FeaturedTourList from '../components/Featured-tours/FeaturedTourList'
-import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
+import FeaturedTourList from '../components/FeaturedTourList'
+import MasonryImagesGallery from '../components/MasonryImagesGallery'
 import ServiceList from '../services/ServiceList'
-import Testimonial from '../components/Testimonial/Testimonial'
+import Testimonial from '../components/Testimonial'
 
 const Home = () => {
   return (
@@ -31,7 +31,7 @@ const Home = () => {
                 </Col>
                 <Col lg='2'>
                     <div className='hero__img-box mt-4'>
-                        <video src={heroVideo} controls></video>
+                        <video src={heroVideo} controls loop></video>
                     </div>
                 </Col>
                 <SearchBar />

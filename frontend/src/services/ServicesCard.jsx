@@ -1,5 +1,5 @@
 import React from 'react'
-import './service-card.css'
+import '../styles/services/service-card.css'
 
 const ServicesCard = ({ item }) => {
     const { imgUrl, title, desc } = item

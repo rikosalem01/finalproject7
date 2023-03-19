@@ -1,8 +1,8 @@
 import React, {useRef, useEffect} from 'react'
 import { Container, Row, Button } from 'reactstrap'
 import { NavLink, Link } from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
-import './header.css'
+import logo from '../assets/images/components/logo.png'
+import '../styles/components/header.css'
 
 const nav__links = [
   {

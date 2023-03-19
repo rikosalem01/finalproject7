@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./booking.css";
+import "../styles/components/booking.css";
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
