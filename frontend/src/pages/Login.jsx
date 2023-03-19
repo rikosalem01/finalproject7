@@ -18,12 +18,12 @@ const Login = () => {
       <Container>
         <Row>
           <Col lg="8" className="m-auto">
-            <div className="login__container d-flex justify-content-between">
-              <div className="login__img">
+            <div className="login-container d-flex justify-content-between">
+              <div className="login-img">
                 <img src={loginImg} alt="" />
               </div>
 
-              <div className="login__form">
+              <div className="login-form">
                 <div className="user">
                   <img src={userIcon} alt="" />
                 </div>
@@ -36,7 +36,7 @@ const Login = () => {
                   <FormGroup>
                     <input type="Password" placeholder="Password" required id="password" onChange={handleChange} />
                   </FormGroup>
-                  <Button className="btn secondary__btn auth__btn" type="Submit">
+                  <Button className="btn secondary-btn auth-btn" type="Submit">
                     Login
                   </Button>
                 </Form>
