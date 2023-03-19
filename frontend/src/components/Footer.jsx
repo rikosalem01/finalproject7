@@ -91,7 +91,7 @@ const Footer = () => {
             <h5 className='footer__link-title'>Contact</h5>
             <ListGroup className='footer__quick-links'>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
-                <h6 className='mb-0 d-flex align-items-center gap-2'>
+                <h6 className='mb-0 d-flex align-items-center '>
                   <span>
                     <i className='ri-map-pin-line'></i>
                   </span>
@@ -100,16 +100,16 @@ const Footer = () => {
                 <p className='mb-0'>Vrindavan</p>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
-                <h6 className='mb-0 d-flex align-items-center gap-2'>
+                <h6 className='mb-0 d-flex align-items-center '>
                   <span>
                     <i className='ri-mail-line'></i>
                   </span>
                   Email
                 </h6>
-                <p className='mb-0'>sugiono@gmail.com</p>
+                <p className='mb-0 email'>kelompok7@gmail.com</p>
               </ListGroupItem>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
-                <h6 className='mb-0 d-flex align-items-center gap-2'>
+                <h6 className='mb-0 d-flex align-items-center '>
                   <span>
                     <i className='ri-phone-fill'></i>
                   </span>
@@ -120,7 +120,7 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg='12' className='text-center pt-5'>
-              <p className='copyright'>Copyright {year}, design and develope by Sugiono. All rights reserved</p>
+              <p className='copyright'>Copyright {year}, design and develope by Kelompok 7. All rights reserved</p>
           </Col>
         </Row>
       </Container>
