@@ -30,10 +30,14 @@
 }
 
 .search__icon{
-    font-size: 1.6rem;
+    margin-right: 5px;
+    font-size: 2rem;
     padding: 0.2rem;
     background: var(--secondary-color);
     color: #fff;
     border-radius: 10px 5px 10px 5px;
     cursor: pointer;
+}
+.date{
+    margin-right: 20px;
 }

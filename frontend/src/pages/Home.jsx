@@ -18,8 +18,8 @@ const Home = () => {
         <Container>
             <Row>
                 <Col lg='6'>
-                    <div className='hero__content'>
-                        <div className='hero__subtitle d-flex align-items-center'>
+                    <div className='hero-content'>
+                        <div className='hero-subtitle d-flex align-items-center'>
                             <Subtitle subtitle={'Know Before You Go'} />
                             <img src={world} alt="" />
                         </div>
@@ -30,7 +30,7 @@ const Home = () => {
                     </div>
                 </Col>
                 <Col lg='2'>
-                    <div className='hero__img-box mt-4'>
+                    <div className='hero-img-box mt-4'>
                         <video src={heroVideo} controls loop></video>
                     </div>
                 </Col>
@@ -45,8 +45,8 @@ const Home = () => {
         <Container>
             <Row>
                 <Col lg='3'>
-                    <h5 className='services__subtitle'>What we serve</h5>
-                    <h2 className='services__title'>we offer our best services</h2>
+                    <h5 className='services-subtitle'>What we serve</h5>
+                    <h2 className='services-title'>we offer our best services</h2>
                 </Col>
                 <ServiceList />
             </Row>
@@ -60,7 +60,7 @@ const Home = () => {
             <Row>
                 <Col lg='12' className='mb-5'>
                     <Subtitle subtitle={"Explore"} />
-                    <h2 className='featured__tour-title'>Our featured tours</h2>
+                    <h2 className='featured-tour-title'>Our featured tours</h2>
                 </Col>
                 <FeaturedTourList />
             </Row>
@@ -84,23 +84,23 @@ const Home = () => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aut odit dignissimos illo quae tempore optio quaerat, enim aliquam magni sapiente vero cumque laudantium odio cum corporis possimus sunt perferendis.
                         </p>
                     </div>
-                    <div className='counter__wrapper d-flex align-items-center gap-5'>
-                        <div className='counter__box'>
+                    <div className='counter-wrapper d-flex align-items-center gap-5'>
+                        <div className='counter-box'>
                             <span>12k+</span>
                             <h6>Successful Trip</h6>
                         </div>
-                        <div className='counter__box'>
+                        <div className='counter-box'>
                             <span>2k+</span>
                             <h6>Regular client</h6>
                         </div>
-                        <div className='counter__box'>
+                        <div className='counter-box'>
                             <span>15</span>
                             <h6>Years experience</h6>
                         </div>
                     </div>
                 </Col>
                 <Col lg='6'>
-                    <div className='experience__img'>
+                    <div className='experience-img'>
                         <img src={experienceImg} alt="" />
                     </div>
                 </Col>
@@ -116,7 +116,7 @@ const Home = () => {
         <Row>
             <Col lg="12">
                 <Subtitle subtitle={"Galery"}/>
-                <h2 className='galery__title'>
+                <h2 className='galery-title'>
                     Visit our costumer tour gallery
                 </h2>
             </Col>
@@ -135,7 +135,7 @@ const Home = () => {
             <Row>
                 <Col>
                     <Subtitle subtitle={'Fans Love'}/>
-                    <h2 className='testimonial__title'>What our fans say about us</h2>
+                    <h2 className='testimonial-title'>What our fans say about us</h2>
                 </Col>
                 <Col lg='12'>
                     <Testimonial/>

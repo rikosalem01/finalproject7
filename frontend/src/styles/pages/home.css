@@ -1,9 +1,9 @@
-.hero__subtitle img{
+.hero-subtitle img{
     width: 2.3rem;
     height: 2.3rem;
 }
 
-.hero__content h1 {
+.hero-content h1 {
     font-size: 3.2rem;
     font-weight: 600;
     margin-top: 1rem;
@@ -11,17 +11,17 @@
     color: var(--heading-color);
 }
 
-.hero__content h1 .highlight{
+.hero-content h1 .highlight{
     color: var(--secondary-color);
 }
 
-.hero__content p {
+.hero-content p {
     font-size: 1.1rem;
     color: var(--text-color);
     line-height: 2rem;
 }
 
-.hero__img-box video{
+.hero-img-box video{
 margin-left: 60px;
 width: 500px;
 height: 350px;
@@ -30,48 +30,48 @@ border: 1px solid var(--secondary-color);
 object-fit: cover;
 }
 
-.hero__content{
+.hero-content{
     padding-top: 3.5rem;
 }
 
-.hero__img-box{
+.hero-img-box{
     padding-top: 2rem;
 }
 
-.services__subtitle{
+.services-subtitle{
     font-size: 2.2rem;
     font-weight: 500;
     color: #ee6e63;
     font-family: var(--subtitle-font-name)
 }
 
-.services__title{
+.services-title{
     font-size: 2.5rem;
     font-weight: 500;
 }
 
-.featured__tour-title{
+.featured-tour-title{
 font-size: 2.3rem;
 font-weight: 500;
 }
 
-.experience__content h2{
+.experience-content h2{
     font-size: 2.5rem;
     margin-top: 1rem;
     font-weight: 500;
 }
 
-.experience__content p{
+.experience-content p{
     font-size: 1.1rem;
     color: var(--text-color);
     margin-top: 1rem;
 }
 
-.counter__wrapper{
+.counter-wrapper{
     margin-top: 2.5rem;
 }
 
-.counter__box span{
+.counter-box span{
     width: 70px;
     height: 70px;
     margin: auto;
@@ -85,31 +85,31 @@ font-weight: 500;
     border-radius: 10px 5px 10px 5px;
 }
 
-.counter__box h6{
+.counter-box h6{
     font-size: 1.1rem;
     margin-top: 0.7rem;
     color:var(--text-color)
 }
 
-.experience__img img {
+.experience-img img {
     width: 90%;
 }
 
-.gallery__title{
+.gallery-title{
     font-size: 2.3rem;
     margin-bottom: 2.5rem;
     margin-top: 1rem;
 }
 
-.masonry__img{
+.masonry-img{
     transition: .3s;
 }
 
-.masonry__img:hover{
+.masonry-img:hover{
     transform:scale(1.1)
 }
 
-.testimonial__title{
+.testimonial-title{
     font-size: 2.3rem;
     margin-top: 1rem;
 }
