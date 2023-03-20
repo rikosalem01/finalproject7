@@ -26,7 +26,7 @@ span:hover{
     font-weight: 700;
 }
 
-.active__page{
+.active-page{
     background: var(--secondary-color);
     color: #fff !important;
 }
