@@ -110,7 +110,7 @@ const TourDetail = () => {
                         <div className='w-100'>
                           <div className='d-flex align-items-center justify-content-between'>
                             <div>
-                              <h5>Sugiono</h5>
+                              <h5>Toriq Ibrahim</h5>
                               <p>{new Date('01-18-2023').toLocaleDateString("en-US", options)}</p>
                             </div>
                             <span className='d-flex align-items-center'>

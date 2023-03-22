@@ -37,9 +37,7 @@ const Testimonial = () => {
     return (
         <Slider {...setting}>
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Excepturi, facilis. Eos aliquam iste nostrum sunt cum? Nemo ipsam alias numquam sit quam. Beatae,
-                    architecto laboriosam quis debitis nemo adipisci exercitationem</p>
+                <p>Travelling with Travel World was a phenomenal experience! Their exceptional services and attention to detail made our journey around the world seamless and hassle-free. The tour guides were knowledgeable and personable, adding an extra layer of enjoyment to our trip. We highly recommend Travel World to anyone looking for a truly unforgettable travel experience.</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava01} className='w-25 h-25 rounded-2' alt='' />
                     <div>
@@ -49,9 +47,7 @@ const Testimonial = () => {
                 </div>
             </div>
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Excepturi, facilis. Eos aliquam iste nostrum sunt cum? Nemo ipsam alias numquam sit quam. Beatae,
-                    architecto laboriosam quis debitis nemo adipisci exercitationem</p>
+                <p>I had the pleasure of travelling with Travel World, and I must say, they exceeded my expectations! Their customisation services allowed me to tailor my trip to my liking, and their tour guides were knowledgeable and passionate about the places we visited. I highly recommend Travel World to anyone looking for a one-of-a-kind travel experience!</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava02} className='w-25 h-25 rounded-2' alt='' />
                     <div>
@@ -61,9 +57,7 @@ const Testimonial = () => {
                 </div>
             </div>
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Excepturi, facilis. Eos aliquam iste nostrum sunt cum? Nemo ipsam alias numquam sit quam. Beatae,
-                    architecto laboriosam quis debitis nemo adipisci exercitationem</p>
+                <p>My experience with Travel World was simply amazing! Their attention to detail and exceptional customer service made our trip around the world smooth and hassle-free. I was impressed by their expertise in providing up-to-date weather information and making necessary adjustments to ensure our itinerary was not affected.</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava03} className='w-25 h-25 rounded-2' alt='' />
                     <div>
@@ -73,9 +67,7 @@ const Testimonial = () => {
                 </div>
             </div>
             <div className='testimonial py-4 px-3'>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Excepturi, facilis. Eos aliquam iste nostrum sunt cum? Nemo ipsam alias numquam sit quam. Beatae,
-                    architecto laboriosam quis debitis nemo adipisci exercitationem</p>
+                <p>I cannot say enough good things about Travel World! From start to finish, they provided exceptional services, from customising our itinerary to fit our preferences to providing the best tour guides in every location we visited. The accommodations were top-notch, and the experiences were truly unforgettable. Travel World truly went above and beyond to make our travel dreams a reality!</p>
                 <div className='d-flex align-items-center gap-4 mt-3'>
                     <img src={ava02} className='w-25 h-25 rounded-2' alt='' />
                     <div>
