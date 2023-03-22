@@ -57,10 +57,7 @@ const Register = (e) => {
                       onChange={handleChange}
                     />
                   </FormGroup>
-                  <Button
-                    className="btn secondary__btn auth__btn"
-                    type="Submit"
-                  >
+                  <Button className="btn secondary-btn auth-btn" type="Submit">
                     Register
                   </Button>
                 </Form>
