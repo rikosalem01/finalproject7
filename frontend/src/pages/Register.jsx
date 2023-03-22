@@ -23,7 +23,7 @@ const Register = (e) => {
                 <img src={registerImg} alt="" />
               </div>
 
-              <div className="login__form">
+              <div className="login-form">
                 <div className="user">
                   <img src={userIcon} alt="" />
                 </div>
