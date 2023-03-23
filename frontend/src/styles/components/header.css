@@ -12,28 +12,28 @@
     margin-bottom: 0;
 }
 
-.nav__item a{
+.nav-item a{
     text-decoration: none;
     color: var(--heading-color);
     font-weight: 500;
     font-size: 1.1rem;
 }
 
-.nav__item a:hover{
+.nav-item a:hover{
     color:inherit;
 }
 
-.nav__item a.active__link{
+.nav-item a.active-link{
     color:var(--secondary-color);
 }
 
-.mobile__menu{
+.mobile-menu{
     font-size: 1.3rem;
     color: var(--heading-color);
     display: none;
 }
 
-.sticky__header{
+.sticky-header{
     width: 100%;
     height: 80px;
     line-height: 80px;
