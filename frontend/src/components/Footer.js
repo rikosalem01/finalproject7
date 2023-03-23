@@ -43,9 +43,7 @@ const Footer = () => {
           <Col lg='3'>
             <div className='logo'>
               <img src={logo} alt='' />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae laboriosam eius possimus atque similique soluta voluptatibus aliquam nostrum.
-                Nemo minus harum dicta tempora dolores accusamus earum totam molestias qui cum.
+              <p>Travel World is a premier travel company dedicated to providing exceptional and personalised travel experiences for travellers around the globe. With a focus on attention to detail, customisation, and expert knowledge, Travel World offers seamless and unforgettable journeys to destinations around the world.
               </p>
               <div className='social__links d-flex align-items-center gap-4'>
                 <span>

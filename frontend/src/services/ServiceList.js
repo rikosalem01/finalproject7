@@ -9,17 +9,17 @@ const servicesData = [
     {
         imgUrl: weatherImg,
         title: 'Calculate Weather',
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro possimus, cupiditate quidem excepturi quo id sunt quae quos assumenda! Repellendus, exercitationem iusto. Beatae distinctio nihil quasi minima. Consequatur, perspiciatis ipsa"
+        desc: "Experience the best travel services with us, rain or shine, we guarantee to provide you with the most reliable and up-to-date weather information to ensure a seamless journey around the world."
     },
     {
         imgUrl: guideImg,
         title: 'Best Tour Guide',
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro possimus, cupiditate quidem excepturi quo id sunt quae quos assumenda! Repellendus, exercitationem iusto. Beatae distinctio nihil quasi minima. Consequatur, perspiciatis ipsa"
+        desc: "Embark on the ultimate journey around the world with our best-in-class tour guides who possess extensive knowledge and expertise, ensuring you an unforgettable travel experience."
     },
     {
         imgUrl: customizationImg,
         title: 'Customization',
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro possimus, cupiditate quidem excepturi quo id sunt quae quos assumenda! Repellendus, exercitationem iusto. Beatae distinctio nihil quasi minima. Consequatur, perspiciatis ipsa"
+        desc: "Tailor your dream travel itinerary with our customization services, where we prioritize your unique preferences and interests to craft a personalized travel experience that exceeds your expectations."
     },
 ]
 

@@ -26,12 +26,12 @@ const Home = () => {
                         <h1>Traveling opens the door to creating{' '}
                             <span className='highlight'>memories</span>
                         </h1>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A ipsum quos accusamus minus voluptatum reiciendis totam veritatis in! Et voluptates veritatis hic suscipit, facilis aspernatur aliquam cumque fugiat iure neque.
+                        Staying in comfortable accommodation is one of the best ways to enjoy a trip, whether it's for a vacation or a business trip. At TravelWorld, you can easily find the right accommodation plus according to your budget.
                     </div>
                 </Col>
                 <Col lg='2'>
                     <div className='hero-img-box mt-4'>
-                        <video src={heroVideo} controls loop></video>
+                        <video src={heroVideo} controls loop autoPlay muted></video>
                     </div>
                 </Col>
                 <SearchBar />
@@ -81,7 +81,7 @@ const Home = () => {
                             With our all experience <br />we will serve you
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti aut odit dignissimos illo quae tempore optio quaerat, enim aliquam magni sapiente vero cumque laudantium odio cum corporis possimus sunt perferendis.
+                        Indulge in an immersive travel experience with us, where we curate every detail to offer you a seamless and unforgettable journey around the world, allowing you to explore and discover new cultures, cuisines, and landscapes like never before.
                         </p>
                     </div>
                     <div className='counter-wrapper d-flex align-items-center gap-5'>
