@@ -33,19 +33,19 @@ const Booking = ({ tour, avgRating }) => {
 
   return (
     <div className="booking">
-      <div className="booking__top d-flex align-items-center justify-content-between">
+      <div className="booking-top d-flex align-items-center justify-content-between">
         <h3>
           ${price}
           <span>/per person</span>
         </h3>
-        <span className="tour__rating d-flex align-items-center gap-1">
+        <span className="tour-rating d-flex align-items-center gap-1">
           <i className="ri-star-fill" style={{ color: "var(--secondary-color)" }}></i>
           {avgRating === 0 ? null : avgRating} ({reviews?.length})
         </span>
       </div>
-      <div className="booking__form">
+      <div className="booking-form">
         <h5>Information</h5>
-        <Form className="booking__info-form" onSubmit={handleClick}>
+        <Form className="booking-info-form" onSubmit={handleClick}>
           <FormGroup>
             <input type="text" placeholder="Full name" id="fullname" required onChange={handleChange} />
           </FormGroup>
@@ -58,7 +58,7 @@ const Booking = ({ tour, avgRating }) => {
           </FormGroup>
         </Form>
       </div>
-      <div className="booking__bottom">
+      <div className="booking-bottom">
         <ListGroup>
           <ListGroupItem className="border-0 px-0">
             <h5 className="d-flex align-items-center gap-1">
@@ -76,7 +76,7 @@ const Booking = ({ tour, avgRating }) => {
             <span>${totalAmount}</span>
           </ListGroupItem>
         </ListGroup>
-        <Button className="btn primary__btn w-100" onClick={handleClick}>
+        <Button className="btn primary-btn w-100" onClick={handleClick}>
           Book Now
         </Button>
       </div>

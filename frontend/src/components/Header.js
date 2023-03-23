@@ -26,9 +26,9 @@ const Header = () => {
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
       if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-        headerRef.current.classList.add('sticky__header')
+        headerRef.current.classList.add('sticky-header')
       }else{
-        headerRef.current.classList.remove('sticky__header')
+        headerRef.current.classList.remove('sticky-header')
       }
     })
   }
@@ -53,7 +53,7 @@ const Header = () => {
                 {nav__links.map((item, index) => (
                   <li className='nav-item' key={index}>
                     <NavLink to={item.path} className={navClass => navClass.isActive ? 
-                    "active__link" : ""
+                    "active-link" : ""
                     }>{item.display}</NavLink>
                   </li>
                 ))}
@@ -61,7 +61,7 @@ const Header = () => {
             </div>
             {/* menu end */}
             <div className='nav-right d-flex align-items-center gap-4'>
-              <div className='nav-btns d-flex align-items-center gap-4'>
+              <div className='nav-btn d-flex align-items-center gap-4'>
                 <Button className='btn secondary-btn'>
                   <Link to='/login'>Login</Link>
                 </Button>

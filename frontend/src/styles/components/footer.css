@@ -12,24 +12,23 @@
     color: var(--text-color);
 }
 
-.social__links span a{
+.social-links span a{
     text-decoration: none;
     color: var(--heading-color);
     font-size:1.2rem;
 }
-
-.footer__link-title{
+.footer-link-title{
     color: var(--heading-color);
     margin-bottom: 1rem;
 }
 
-.footer__quick-links li a{
+.footer-quick-links li a{
     text-decoration: none;
     color: var(--text-color);
     font-size: 1.1rem;
 }
 
-.footer__quick-links h6 span i {
+.footer-quick-links h6 span i {
     color: var(--secondary-color);
     font-size: 1.1rem;
 }

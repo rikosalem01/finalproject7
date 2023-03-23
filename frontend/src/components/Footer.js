@@ -45,7 +45,7 @@ const Footer = () => {
               <img src={logo} alt='' />
               <p>Travel World is a premier travel company dedicated to providing exceptional and personalised travel experiences for travellers around the globe. With a focus on attention to detail, customisation, and expert knowledge, Travel World offers seamless and unforgettable journeys to destinations around the world.
               </p>
-              <div className='social__links d-flex align-items-center gap-4'>
+              <div className='social-links d-flex align-items-center gap-4'>
                 <span>
                   <Link to='#'><i className='ri-youtube-line'></i></Link>
                 </span>
@@ -62,8 +62,8 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg='3'>
-            <h5 className='footer__link-title'>Discover</h5>
-            <ListGroup className='footer__quick-links'>
+            <h5 className='footer-link-title'>Discover</h5>
+            <ListGroup className='footer-quick-links'>
               {
                 quick__links.map((item, index) => (
                   <ListGroupItem key={index} className='ps-0 border-0'>
@@ -74,8 +74,8 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col lg='3'>
-            <h5 className='footer__link-title'>Quick Links</h5>
-            <ListGroup className='footer__quick-links'>
+            <h5 className='footer-link-title'>Quick Links</h5>
+            <ListGroup className='footer-quick-links'>
               {
                 quick__links2.map((item, index) => (
                   <ListGroupItem key={index} className='ps-0 border-0'>
@@ -86,8 +86,8 @@ const Footer = () => {
             </ListGroup>
           </Col>
           <Col>
-            <h5 className='footer__link-title'>Contact</h5>
-            <ListGroup className='footer__quick-links'>
+            <h5 className='footer-link-title'>Contact</h5>
+            <ListGroup className='footer-quick-links'>
               <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
                 <h6 className='mb-0 d-flex align-items-center '>
                   <span>

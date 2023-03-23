@@ -11,18 +11,18 @@ const TourCard = ({ tour }) => {
 
   const {totalRating, avgRating } = calculateAvgRating(reviews)
   return (
-    <div className='tour__card'>
+    <div className='tour-card'>
       <Card>
-        <div className='tour__img'>
+        <div className='tour-img'>
           <img src={photo} alt='' />
           {featured && <span>Featured</span>}
         </div>
         <CardBody>
-          <div className='card__top d-flex align-items-center justify-content-between'>
-            <span className='tour__location d-flex align-items-center gap-1'>
+          <div className='card-top d-flex align-items-center justify-content-between'>
+            <span className='tour-location d-flex align-items-center gap-1'>
               <i className='ri-map-pin-inline'></i>{city}
             </span>
-            <span className='tour__rating d-flex align-items-center gap-1'>
+            <span className='tour-rating d-flex align-items-center gap-1'>
               <i className='ri-star-fill'></i>{avgRating === 0 ? null : avgRating}
               {totalRating === 0 ? (
                 'Not rated'
@@ -31,14 +31,14 @@ const TourCard = ({ tour }) => {
               )}
             </span>
           </div>
-          <h5 className='tour__title'>
+          <h5 className='tour-title'>
             <Link to={`/tours/${id}`}>{title}</Link>
           </h5>
-          <div className='card__bottom d-flex align-items-center justify-content-between mt-3'>
+          <div className='card-bottom d-flex align-items-center justify-content-between mt-3'>
             <h5>
               ${price} <span>/per person</span>
             </h5>
-            <button className='btn booking__btn'>
+            <button className='btn booking-btn'>
               <Link to={`/tours/${id}`}>Book Now</Link>
             </button>
           </div>

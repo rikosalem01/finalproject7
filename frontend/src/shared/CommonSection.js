@@ -4,7 +4,7 @@ import '../styles/shared/common-section.css'
 
 const CommonSection = ({ title }) => {
   return (
-    <section className='common__section'>
+    <section className='common-section'>
       <Container>
         <Row>
           <Col lg='12'>

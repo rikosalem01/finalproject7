@@ -9,18 +9,18 @@ const Newsletter = () => {
             <Container>
                 <Row>
                     <Col lg='6'>
-                        <div className='newsletter__content'>
+                        <div className='newsletter-content'>
                             <h2>Subscribe now to get useful traveling information</h2>
-                            <div className='newsletter__input'>
+                            <div className='newsletter-input'>
                                 <input type='email' placeholder='Enter your email' />
-                                <button className='btn newsletter__btn'>Subscribe</button>
+                                <button className='btn newsletter-btn'>Subscribe</button>
                             </div>
                             <p>By subscribing to Travel World, you can enjoy benefits in the form of special offers, discounts, access to exclusive travel packages, and the best priority services. Apart from that, you will also get access to the latest information about popular tourist destinations and unforgettable travel experiences.
                             </p>
                         </div>
                     </Col>
                     <Col lg='6'>
-                        <div className='newsletter__img'>
+                        <div className='newsletter-img'>
                             <img src={maleTourist} alt=''/>
                         </div>
                     </Col>
