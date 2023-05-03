@@ -5,7 +5,7 @@ import { Col, Form, FormGroup } from 'reactstrap'
 const SearchBar = () => {
 
     const locationRef = useRef('')
-    const dateRef = useRef(0)
+    const dateRef = useRef('')
     const maxGroupSizeRef = useRef(0)
 
     const searchHandler = () => {
