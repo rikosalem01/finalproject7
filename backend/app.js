@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import db from "./config/database.js"
 import tourRoute from "./router/tour.js"
+import userRouter from "./router/user.js"
 
 dotenv.config()
 const app = express()
@@ -27,6 +28,7 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 
 app.use("/api/tour", tourRoute)
+app.use("/api/user", userRouter)
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)

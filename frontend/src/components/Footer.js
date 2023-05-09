@@ -56,7 +56,7 @@ const Footer = () => {
                   <Link to='#'><i className='ri-facebook-circle-line'></i></Link>
                 </span>
                 <span>
-                  <Link to='#'><i className='ri-instagram-line'></i></Link>
+                  <Link to=''><i className='ri-instagram-line'></i></Link>
                 </span>
               </div>
             </div>
