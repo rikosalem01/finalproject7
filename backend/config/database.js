@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize"
+import { Sequelize } from "sequelize";
 
 const db = new Sequelize("web-travel", "root", "palopo2016", {
     host: "localhost",
@@ -6,4 +6,4 @@ const db = new Sequelize("web-travel", "root", "palopo2016", {
     dialect: "mysql"
 })
 
-export default db
+export default db;
