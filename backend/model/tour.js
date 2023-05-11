@@ -21,7 +21,7 @@ const Tour = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    photo:{
+    distance:{
         type: DataTypes.STRING,
         allowNull: false
     },
