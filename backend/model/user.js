@@ -21,7 +21,11 @@ const User = db.define('user', {
     },
     photo: {
         type: DataTypes.STRING,
-        defaultValue: 'user'
+        allowNull: true
+    },
+    role:{
+        type:DataTypes.STRING,
+        defaultValue:"user"
     }
 }, {
     freezeTableName: true
