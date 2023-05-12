@@ -4,46 +4,49 @@ import Review from "./review.js";
 
 const { DataTypes } = Sequelize;
 
-const Tour = db.define(
-  "tour",
-  {
+const Tour = db.define('tour', {
     title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
     },
-    city:{
-
+    city: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    photo: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    address: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    distance:{
+    distance: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    photo: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    desc: {
         type: DataTypes.STRING,
         allowNull: false
     },
     price: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     maxGroupSize: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
     featured: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-  },
-  {
-    freezeTableName: true,
-  }
-);
+        type: DataTypes.BOOLEAN,
+        allowNull: false
+    }
+}, {
+    freezeTableName: true
+});
 
-Tour.hasMany(Review, { foreignKey: "tourId" });
-Review.belongsTo(Tour, { foreignKey: "tourId" });
+Tour.hasMany(Review, { foreignKey: 'tourId' });
+Review.belongsTo(Tour, { foreignKey: 'tourId' });
 
 export default Tour;
