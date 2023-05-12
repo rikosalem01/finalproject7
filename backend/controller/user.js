@@ -7,16 +7,27 @@ export const register = async (req, res) => {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(req.body.password, salt)
 
+        const userExist = await User.findOne({
+            where: {
+              [Op.or]: [
+                { username: req.body.username },
+                { email: req.body.email }
+              ]
+            }
+          })
+      
+          if(userExist) {
+            return res.status(400).json({
+              message: 'User already exists'
+            })
+          }
+
         const newUser = new User({
             username: req.body.username,
             email: req.body.email,
             password: hash,
+            role: req.body.role
         })
-        if(!newUser){
-            return res.status(400).json({
-                message: 'user already exist'
-            })
-        }
         await newUser.save()
 
         res.status(200).json({

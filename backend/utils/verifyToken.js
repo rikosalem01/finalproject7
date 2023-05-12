@@ -1,12 +1,12 @@
 import jwt from 'jsonwebtoken'
 
 export const verifyToken = (req, res, next) => {
-    const token = req.cookies.accessToken
+    const token = req.cookies.accesToken
 
     if (!token) {
         return res.status(401).json({
             success: false,
-            message: "You 're not authorize"
+            message: "You're not authorize"
         })
     }
 
