@@ -1,5 +1,4 @@
 import { Sequelize } from "sequelize"
-import { toDefaultValue } from "sequelize/types/utils.js"
 import db from "../config/database.js"
 
 const { DataTypes } = Sequelize
@@ -25,7 +24,7 @@ const User = db.define('user', {
     },
     role: {
         type: DataTypes.STRING,
-        toDefaultValue: 'user'
+        defaultValue: 'user'
     }
 }, {
     freezeTableName: true
