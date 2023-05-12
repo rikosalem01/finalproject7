@@ -17,12 +17,16 @@ const Tour = db.define(
         type: DataTypes.STRING,
         allowNull: false
     },
+    address: {
+      type: DataTypes.STRING,
+      required: true,
+    },
     photo: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     distance:{
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     price: {
