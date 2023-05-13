@@ -28,6 +28,7 @@ db.sync()
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
+
 app.use("/api/tour", tourRoute);
 app.use("/api/review", reviewRoute);
 app.use("/api/booking", bookingRoute);
