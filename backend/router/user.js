@@ -1,6 +1,6 @@
 import express from 'express';
-import { deleteUser, getAllUser, getSingleUser, login, register, updateUser } from '../controller/user.js';
-import {  verifyUser } from '../utils/verifyToken.js';
+import { deleteUser, getAllUser, getSingleUser, login, logout, register, updateUser } from '../controller/user.js';
+import {  verifyAdmin, verifyAuth } from '../utils/verifyToken.js';
 
 
 
@@ -9,9 +9,10 @@ const router = express.Router()
 
 router.post("/register", register)
 router.post("/login", login)
-router.put("/:id", verifyUser, updateUser)
-router.delete("/:id", deleteUser)
-router.get("/:id", verifyUser, getSingleUser)
-router.get("/", getAllUser)
+router.post("/logout", logout)
+router.put("/:id", verifyAuth, updateUser)
+router.delete("/:id",verifyAuth, deleteUser)
+router.get("/:id", verifyAuth, getSingleUser)
+router.get("/", verifyAdmin, getAllUser)
 
 export default router

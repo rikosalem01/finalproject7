@@ -88,9 +88,24 @@ export const login = async (req, res) => {
     }
 }
 
+export const logout = async ( req, res ) => {
+    try {
+        res.clearCookie('accessToken')
+        res.status(200).json({
+            success: true,
+            message: 'logout berhasil'
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
 export const updateUser = async (req, res) =>  {
     const id = req.params.id
-    const { username, email } = req.body
+    const { username, email, password } = req.body
 
     try {
         const user = await User.findOne({ username, email }, { where: { id } })
@@ -102,7 +117,7 @@ export const updateUser = async (req, res) =>  {
             })
         }
 
-        await User.update({ username, email }, { where: { id } })
+        await User.update({ username, email, password }, { where: { id } })
 
         const updateUser = await User.findByPk(id)
 
@@ -114,7 +129,7 @@ export const updateUser = async (req, res) =>  {
     } catch (error) {
         return res.status(500).json({
             status: false,
-            message: 'Internal server error'
+            message: error.message
         })
     }
 }
