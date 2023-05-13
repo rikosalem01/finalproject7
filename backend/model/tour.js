@@ -28,7 +28,6 @@ const Tour = db.define('tour', {
     },
     desc: {
         type: DataTypes.STRING,
-        type: DataTypes.STRING,
         required: true,
     },
     photo: {

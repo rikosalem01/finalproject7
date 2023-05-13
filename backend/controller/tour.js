@@ -3,7 +3,9 @@ import Tour from "../model/tour.js"
 
 export const getAllTour = async (req, res) => {
     try {
-        const tours = await Tour.findAll({})
+        const tours = await Tour.findAll({
+            include: 'reviews'
+        })
 
         if (!tours) {
             return res.status(404).json({

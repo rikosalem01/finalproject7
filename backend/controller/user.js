@@ -1,11 +1,27 @@
 import User from "../model/user.js"
 import bcrypt from 'bcryptjs'
 import jwt from "jsonwebtoken"
+import { Op } from 'sequelize';
 
 export const register = async (req, res) => {
     try {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(req.body.password, salt)
+
+        const userExist = await User.findOne({
+            where: {
+              [Op.or]: [
+                { username: req.body.username },
+                { email: req.body.email }
+              ]
+            }
+          })
+      
+          if(userExist) {
+            return res.status(400).json({
+              message: 'User already exists'
+            })
+          }
 
         const newUser = new User({
             username: req.body.username,
@@ -13,11 +29,6 @@ export const register = async (req, res) => {
             password: hash,
             role: req.body.role
         })
-        if(!newUser){
-            return res.status(400).json({
-                message: 'user already exist'
-            })
-        }
         await newUser.save()
 
         res.status(200).json({
@@ -77,9 +88,24 @@ export const login = async (req, res) => {
     }
 }
 
+export const logout = async ( req, res ) => {
+    try {
+        res.clearCookie('accessToken')
+        res.status(200).json({
+            success: true,
+            message: 'logout berhasil'
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
 export const updateUser = async (req, res) =>  {
     const id = req.params.id
-    const { username, email } = req.body
+    const { username, email, password } = req.body
 
     try {
         const user = await User.findOne({ username, email }, { where: { id } })
@@ -91,7 +117,7 @@ export const updateUser = async (req, res) =>  {
             })
         }
 
-        await User.update({ username, email }, { where: { id } })
+        await User.update({ username, email, password }, { where: { id } })
 
         const updateUser = await User.findByPk(id)
 
@@ -103,7 +129,7 @@ export const updateUser = async (req, res) =>  {
     } catch (error) {
         return res.status(500).json({
             status: false,
-            message: 'Internal server error'
+            message: error.message
         })
     }
 }

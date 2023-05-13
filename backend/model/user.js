@@ -24,6 +24,7 @@ const User = db.define('user', {
     },
     role:{
         type:DataTypes.STRING,
+        defaultValue: "user"
     }
 }, {
     freezeTableName: true
