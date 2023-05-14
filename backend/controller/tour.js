@@ -54,26 +54,18 @@ export const getSingleTour = async (req, res) => {
 
 export const createTour = async (req, res) => {
 
-    const newTour = new Tour(req.body)
-
     try {
-        const savedTour = await newTour.save()
-
-        if (!savedTour) {
-            return res.status(400).json({
-                message: "Tour not created"
-            })
-        }
-
+        const savedTour = await Tour.create(req.body)
+        
         res.status(200).json({
             success: true,
-            message: "Successfully created!",
+            message: "Successfully created",
             data: savedTour
         })
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: error.message
+            message: "Failed to create, Try again!"
         })
     }
 }
