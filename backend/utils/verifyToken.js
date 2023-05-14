@@ -22,10 +22,9 @@ export const verifyToken = (req, res, next) => {
     })
 }
 
-
 export const verifyAuth = (req, res, next) => {
     verifyToken(req, res, () => {
-        if (req.user.id === req.params.id || req.user.role === 'admin' ) {
+        if (req.user.id === req.params.id || req.user.role === 'admin' || req.user.role === 'user' ) {
             next()
         }else{
            return res.status(401).json({
