@@ -119,10 +119,6 @@
     font-size: 2.7rem;
   }
 
-  .hero__img-box {
-    display: none;
-  }
-
   .hero__video-box {
     display: block;
   }
@@ -143,6 +139,12 @@
 @media only screen and (max-width: 576px) {
   .hero__content h1 {
     font-size: 1.8rem;
+  }
+
+  .hero-img-box {
+    display: flex;
+    justify-content: center;
+    margin-left: 4px;
   }
 
   .services__title,
