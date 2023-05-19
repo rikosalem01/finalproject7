@@ -1,18 +1,48 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/pages/login.css";
 
 import registerImg from "../assets/images/pages/register.png";
 import userIcon from "../assets/images/pages/user.png";
+import { AuthContext } from "../context/AuthContext";
+import { urlApi } from "../utils/config";
 
 const Register = (e) => {
-  const handleChange = () => {};
+  const navigate = useNavigate();
+  const [credentials, setCredentials] = useState({
+    userName: undefined,
+    email: undefined,
+    password: undefined,
+  });
 
-  const handleClick = (e) => {
-    e.preventDefault();
+  const { dispatch } = useContext(AuthContext);
+  const handleChange = (e) => {
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(`${urlApi}/user/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) alert(result.message);
+
+      dispatch({ type: "REGISTER_SUCCESS" });
+      navigate("/login");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   return (
     <section>
       <Container>
@@ -31,33 +61,15 @@ const Register = (e) => {
 
                 <Form onSubmit={handleClick}>
                   <FormGroup>
-                    <input
-                      type="text"
-                      placeholder="Username"
-                      required
-                      id="username"
-                      onChange={handleChange}
-                    />
+                    <input type="text" placeholder="username" required id="username" onChange={handleChange} />
                   </FormGroup>
                   <FormGroup>
-                    <input
-                      type="Password"
-                      placeholder="Password"
-                      required
-                      id="password"
-                      onChange={handleChange}
-                    />
+                    <input type="email" placeholder="email" required id="email" onChange={handleChange} />
                   </FormGroup>
                   <FormGroup>
-                    <input
-                      type="Password"
-                      placeholder="Password Confirmation"
-                      required
-                      id="password"
-                      onChange={handleChange}
-                    />
+                    <input type="password" placeholder="Password" required id="password" onChange={handleChange} />
                   </FormGroup>
-                  <Button className="btn secondary-btn auth-btn" type="Submit">
+                  <Button className="btn secondary__btn auth__btn" type="submit">
                     Register
                   </Button>
                 </Form>

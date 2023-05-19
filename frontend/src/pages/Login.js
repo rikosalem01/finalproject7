@@ -1,16 +1,47 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
-import { Link } from "react-router-dom";
-import "../styles/pages/login.css";
-
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from "../assets/images/pages/login.png";
 import userIcon from "../assets/images/pages/user.png";
+import "../styles/pages/login.css";
+import { AuthContext } from "../context/AuthContext";
+import { urlApi } from "../utils/config";
 
 const Login = () => {
-  const handleChange = (e) => {};
+  const navigate = useNavigate();
+  const [credentials, setCredentials] = useState({
+    email: undefined,
+    password: undefined,
+  });
 
-  const handleClick = (e) => {
+  const { dispatch } = useContext(AuthContext);
+  const handleChange = (e) => {
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleClick = async (e) => {
     e.preventDefault();
+
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await fetch(`${urlApi}/user/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(credentials),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) alert(result.message);
+
+      dispatch({ type: "LOGIN_SUCCESS", payload: result.data });
+      navigate("/");
+    } catch (error) {
+      dispatch({ type: "LOGIN_FAILURE", payload: error.message });
+    }
   };
 
   return (
