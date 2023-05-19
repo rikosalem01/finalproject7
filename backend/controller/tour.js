@@ -2,9 +2,12 @@ import Tour from "../model/tour.js"
 
 
 export const getAllTour = async (req, res) => {
+    const page = parseInt(req.query.page)
     try {
         const tours = await Tour.findAll({
-            include: 'reviews'
+            include: 'reviews',
+            offset: page * 8,
+            limit: 8,
         })
 
         if (!tours) {
@@ -31,9 +34,9 @@ export const getSingleTour = async (req, res) => {
     const id = req.params.id
 
     try {
-        const tour = await Tour.findByPk(id)
+        const tour = await Tour.findByPk(id, {include: 'reviews'})
 
-        if(!tour){
+        if (!tour) {
             return res.status(404).json({
                 message: "Not Found"
             })
@@ -116,7 +119,7 @@ export const deleteTour = async (req, res) => {
             success: true,
             message: "Successfully deleted!"
         })
-    } catch(error){
+    } catch (error) {
         res.status(500).json({
             success: false,
             message: error.message
