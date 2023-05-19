@@ -1,18 +1,16 @@
-import express from 'express';
-import { deleteUser, getAllUser, getSingleUser, login, logout, register, updateUser } from '../controller/user.js';
-import {  verifyAdmin, verifyAuth } from '../utils/verifyToken.js';
-
-
+import express from 'express'
+import { verifyAdmin } from '../utils/verifyToken.js'
+import { createTour, deleteTour, getAllTour, getSingleTour, updateTour, getTourBySearch, getFeaturedTour, getTourCount } from './../controllers/tourController.js'
 
 const router = express.Router()
 
-
-router.post("/register", register)
-router.post("/login", login)
-router.post("/logout", logout)
-router.put("/:id", verifyAuth, updateUser)
-router.delete("/:id",verifyAuth, deleteUser)
-router.get("/:id", verifyAuth, getSingleUser)
-router.get("/", verifyAdmin, getAllUser)
+router.post("/", verifyAdmin, createTour)
+router.put("/:id", verifyAdmin, updateTour)
+router.delete("/:id", verifyAdmin, deleteTour)
+router.get("/:id", getSingleTour)
+router.get("/", getAllTour)
+router.get("/search/getTourBySearch", getTourBySearch)
+router.get("/search/getFeaturedTours", getFeaturedTour)
+router.get("/search/getTourCount", getTourCount)
 
 export default router
