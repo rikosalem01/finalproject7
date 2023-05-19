@@ -42,10 +42,16 @@ const Footer = () => {
         <Row>
           <Col lg='3'>
             <div className='logo'>
+              <a href="home">
               <img src={logo} alt='' />
+<<<<<<< Updated upstream
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Recusandae laboriosam eius possimus atque similique soluta voluptatibus aliquam nostrum.
                 Nemo minus harum dicta tempora dolores accusamus earum totam molestias qui cum.
+=======
+              </a>
+              <p>Travel World is a premier travel company dedicated to providing exceptional and personalised travel experiences for travellers around the globe. With a focus on attention to detail, customisation, and expert knowledge, Travel World offers seamless and unforgettable journeys to destinations around the world.
+>>>>>>> Stashed changes
               </p>
               <div className='social__links d-flex align-items-center gap-4'>
                 <span>

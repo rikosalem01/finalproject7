@@ -42,6 +42,7 @@
 }
 
 .tour-info p {
+<<<<<<< Updated upstream
     line-height: 30px;
     font-size: 1rem;
     color: var(--text-color);
@@ -120,3 +121,84 @@
 .review-item span{
     font-weight: 500;
 }
+=======
+  line-height: 30px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.rating-group span {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.tour-reviews h4 {
+  margin-bottom: 3rem;
+}
+
+.review-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  border: 1px solid var(--secondary-color);
+}
+
+.review-input input {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+}
+
+.review-input input:focus {
+  outline: none;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.review-item img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.user-reviews {
+  margin-top: 2.5rem;
+}
+
+.review-item h5 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.review-item p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.review-item h6 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.review-item span i {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.review-item span {
+  font-weight: 500;
+}
+
+>>>>>>> Stashed changes
