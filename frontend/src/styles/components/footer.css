@@ -1,4 +1,4 @@
-.footer {
+footer {
   padding-top: 70px;
   padding-bottom: 30px;
 }
@@ -8,8 +8,10 @@
   margin-bottom: 1rem;
 }
 
-.footer .logo p {
-  color: var(--text-color);
+.footer-sider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .social-links span a {
@@ -47,9 +49,9 @@
     font-size: 0.75rem;
   }
 
-  .footer-sider {
+  .footer-quick-links {
     display: flex;
-    flex-box: 
+    justify-content: space-between;
   }
 
   .footer-link-title {
