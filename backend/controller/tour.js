@@ -164,8 +164,14 @@ export const getTourBySearch = async (req, res) => {
       });
     }
   };
+<<<<<<< HEAD
 
   export const getFeaturedTour = async (req, res) => {
+=======
+  
+
+export const getFeaturedTour = async (req, res) => {
+>>>>>>> d6d6b4b0e42cdf04866a1072bdca0ebef7d9b052
     try {
         const tours = await Tour.findAll({
             where: {
@@ -188,6 +194,10 @@ export const getTourBySearch = async (req, res) => {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d6d6b4b0e42cdf04866a1072bdca0ebef7d9b052
 export const getTourCount = async (req, res) => {
     try {
         const tourCount = await Tour.count()
@@ -202,4 +212,4 @@ export const getTourCount = async (req, res) => {
             message: "Failed to fetch tour count."
         })
     }
-} 
+}
