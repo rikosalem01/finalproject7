@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import CommonSection from '../shared/CommonSection'
 import { Container, Row, Col } from 'reactstrap'
 import '../styles/pages/tour.css'
-import tourData from '../assets/data/tours'
 import TourCard from '../shared/TourCard'
 import SearchBar from '../shared/SearchBar'
 import Newsletter from '../shared/Newsletter'
+import useFetch from '../hooks/useFetch'
+import { urlApi } from '../utils/config'
 
 
 
@@ -14,11 +15,14 @@ const Tour = () => {
   const [pageCount, setPageCount] = useState(0)
   const [page, setPage] = useState(0)
 
+  const {data:tours,loading,error} = useFetch(`${urlApi}/tour?page=${page}`)
+  const {data:tourCount} = useFetch(`${urlApi}/tour/search/getTourCount`)
 
   useEffect(() => {
-    const pages = Math.ceil(5 / 4) 
+    const pages = Math.ceil(tourCount / 8)
     setPageCount(pages)
-  }, [page])
+    window.scrollTo(0, 0)
+  }, [page,tourCount, tours])
   return (
     <div>
       <CommonSection title={'All Tours'} />
@@ -31,9 +35,13 @@ const Tour = () => {
       </section>
       <section className='pt-0'>
         <Container>
-          <Row>
-            {tourData?.map(
-              tour => <Col lg='3' className='mb-4' key={tour.id}>
+          {loading && <h4 className='text-center pt-5'>Loading ....</h4>}
+          {error && <h4 className='text-center pt-5'>{error}</h4>}
+          {
+            !loading && !error && (
+              <Row>
+            {tours?.map(
+              tour => <Col lg='3' md="6" sm="6" className='mb-4' key={tour._id}>
                 <TourCard tour={tour} />
               </Col>
             )}
@@ -48,6 +56,8 @@ const Tour = () => {
               </div>
             </Col>
           </Row>
+            )
+          }
         </Container>
       </section>
       <Newsletter />
