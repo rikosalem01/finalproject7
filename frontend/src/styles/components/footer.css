@@ -40,6 +40,26 @@
 
 @media only screen and (max-width: 992px) {
   .logo2 img {
+    margin-top: 50px;
     display: none;
+  }
+  footer {
+    font-size: 0.75rem;
+  }
+
+  .footer-sider {
+    display: flex;
+    flex-box: 
+  }
+
+  .footer-link-title {
+    display: flex;
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+
+  .footer-quick-links .footer-link {
+    margin-top: 0px;
+    font-size: 12px;
   }
 }
