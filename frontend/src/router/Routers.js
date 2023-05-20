@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from "../pages/HomePage";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import SearchResultList from "../pages/SearchResultList";
-import ThankYou from "../pages/ThankYou";
-import TourDetails from "../pages/TourDetails";
-import Tours from "../pages/Tours";
+import Login from "../pages/LoginPage";
+import Register from "../pages/RegisterPage";
+import SearchResultList from "../pages/SearchResultListPage";
+import ThankYou from "../pages/ThankYouPage";
+import TourDetails from "../pages/TourDetailsPage";
+import Tours from "../pages/ToursPage";
 
 const Router = () => {
     return (

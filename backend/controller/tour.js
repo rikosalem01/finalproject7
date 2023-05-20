@@ -2,33 +2,34 @@ import Tour from "../model/tour.js"
 
 
 export const getAllTour = async (req, res) => {
-    const page = parseInt(req.query.page)
+    const page = parseInt(req.query.page);
+    const pageSize = 8
+
     try {
+        const totalCount = await Tour.count();
+        const totalPages = Math.ceil(totalCount / pageSize);
+
         const tours = await Tour.findAll({
             include: 'reviews',
-            offset: page * 8,
-            limit: 8,
-        })
-
-        if (!tours) {
-            return res.status(404).json({
-                message: "No Tour Found"
-            })
-        }
+            offset: page * pageSize,
+            limit: pageSize
+        });
 
         res.status(200).json({
             success: true,
             count: tours.length,
-            message: "This is List Tour",
+            totalPages: totalPages,
+            currentPage: page,
+            message: "Successful",
             data: tours
-        })
-    } catch (error) {
-        res.status(404).json({
+        });
+    } catch (err) {
+        res.status(500).json({
             success: false,
-            message: error.message
-        })
+            message: err.message,
+        });
     }
-}
+};
 
 export const getSingleTour = async (req, res) => {
     const id = req.params.id
