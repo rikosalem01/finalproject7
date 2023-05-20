@@ -41,3 +41,36 @@
 .date{
     margin-right: 20px;
 }
+
+@media only screen and (max-width: 844px) {
+    .search-bar{
+        width: 73%;
+        border-radius: 2rem;
+    }
+
+    .search-bar form {
+        flex-wrap: wrap;
+    }
+
+    .search-bar form .form-group{
+        width: 70%;
+    }
+    .form-group-fast{
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+    .search-icon{
+        font-size: 25px;
+        padding: 0.2rem;
+        background: var(--secondary-color);
+        color: #fff;
+        border-radius: 10px 5px 10px 5px;
+        cursor: pointer;
+    }
+    .form-group span{
+        font-size: 1.1rem;
+    }
+    .form-group h6 {
+        font-size: 1rem;
+    }
+}

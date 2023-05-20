@@ -6,10 +6,10 @@ import heroVideo from '../../assets/images/pages/hero-video.mp4'
 import experienceImg from '../../assets/images/pages/experience.png'
 import '../../styles/pages/home.css'
 import SearchBar from '../../shared/SearchBar'
-import FeaturedTourList from '../../components/FeaturedTourList'
-import MasonryImagesGallery from '../../components/MasonryImagesGallery'
+import FeaturedTourList from '../FeaturedTourList'
+import MasonryImagesGallery from '../MasonryImagesGallery'
 import ServiceList from '../../services/ServiceList'
-import Testimonial from '../../components/Testimonial'
+import Testimonial from '../Testimonial'
 
 const Home = () => {
   return (
@@ -26,7 +26,7 @@ const Home = () => {
                         <h1>Traveling opens the door to creating{' '}
                             <span className='highlight'>memories</span>
                         </h1>
-                        Staying in comfortable accommodation is one of the best ways to enjoy a trip, whether it's for a vacation or a business trip. At TravelWorld, you can easily find the right accommodation plus according to your budget.
+                       <p> Staying in comfortable accommodation is one of the best ways to enjoy a trip, whether it's for a vacation or a business trip. At TravelWorld, you can easily find the right accommodation plus according to your budget.</p>
                     </div>
                 </Col>
                 <Col lg='2'>

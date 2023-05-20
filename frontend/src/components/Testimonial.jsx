@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import ava01 from '../assets/images/components/ava-1.jpg'
 import ava02 from '../assets/images/components/ava-2.jpg'
 import ava03 from '../assets/images/components/ava-3.jpg'
+import '../styles/components/testimonial.css'
 
 const Testimonial = () => {
 
@@ -68,7 +69,7 @@ const Testimonial = () => {
             </div>
             <div className='testimonial py-4 px-3'>
                 <p>I cannot say enough good things about Travel World! From start to finish, they provided exceptional services, from customising our itinerary to fit our preferences to providing the best tour guides in every location we visited. The accommodations were top-notch, and the experiences were truly unforgettable. Travel World truly went above and beyond to make our travel dreams a reality!</p>
-                <div className='d-flex align-items-center gap-4 mt-3'>
+                <div className='d-flex align-items-center gap-4 mt-3 border-2'>
                     <img src={ava02} className='w-25 h-25 rounded-2' alt='' />
                     <div>
                         <h6 className='mb-0 mt-3'>Lia Franklin</h6>

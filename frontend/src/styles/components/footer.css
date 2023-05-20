@@ -37,3 +37,29 @@
     color: var(--text-color);
     font-size: 1rem;
 }
+@media only screen and (max-width: 844px) {
+    .logo2 img {
+      margin-top: 50px;
+      display: none;
+    }
+    footer {
+      font-size: 0.75rem;
+      width: 73%;
+    }
+  
+    .footer-sider {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .footer-link-title {
+      display: flex;
+      margin-bottom: 0px;
+      font-size: 15px;
+    }
+  
+    .footer-quick-links .footer-link {
+      margin-top: 0px;
+      font-size: 12px;
+    }
+  }

@@ -91,3 +91,112 @@
 .booking-btn a:hover{
     color: #fff;
 }
+
+@media (max-width: 844px) {
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .left-section {
+      flex: 1 0 50%;
+      padding: 1rem;
+    }
+  
+    .right-section {
+      flex: 1 0 50%;
+      padding: 1rem;
+    }
+  
+    .tour-img img {
+      border-radius: 5px;
+      width: 100%;
+    }
+  
+    .tour-img span {
+      position: static;
+      width: 100%;
+      height: max-content;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 0.3rem;
+      border-radius: 5px 5px 0 0;
+    }
+  
+    .tour-rating,
+    .tour-location,
+    .tour-title {
+      font-size: 0.8rem;
+    }
+  
+    .tour-rating i,
+    .tour-location i {
+      font-size: 0.9rem;
+    }
+  
+    .tour-title {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+  
+    .card-bottom h5 {
+      font-size: 0.9rem;
+    }
+  
+    .card-bottom h5 span {
+      font-size: 0.8rem;
+    }
+  
+    .booking-btn a {
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 844px) {
+      .tour-card {
+        width: 73%;
+      }
+      .card{
+          display: flex;
+      }
+    
+      .tour-img img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+      }
+    
+      .tour-img span {
+        position: static;
+        width: 100%;
+        height: max-content;
+        background: var(--primary-color);
+        color: #fff;
+        padding: 0.3rem;
+        border-radius: 5px 5px 0 0;
+      }
+    
+      .tour-location,
+      .tour-rating {
+        font-size: 0.8rem;
+      }
+    
+      .tour-rating i {
+        font-size: 0.9rem;
+      }
+    
+      .tour-title {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+      }
+    
+      .card-bottom h5 {
+        font-size: 0.9rem;
+      }
+    
+      .card-bottom h5 span {
+        font-size: 0.8rem;
+      }
+    
+      .booking-btn a {
+        font-size: 0.8rem;
+      }
+    }

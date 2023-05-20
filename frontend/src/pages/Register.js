@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/pages/login.css";
-
 import registerImg from "../assets/images/pages/register.png";
 import userIcon from "../assets/images/pages/user.png";
+import { AuthContext } from "../context/AuthContext";
+import { urlApi } from "../utils/config";
+const Register = () => {
 
-const Register = (e) => {
-  const handleChange = () => {};
+  const navigate = useNavigate()
+  const [credentials, setCredentials] = useState({
+    userName: undefined,
+    email: undefined,
+    password: undefined
+  })
 
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
+  const { dispatch } = useContext(AuthContext)
+  const handleChange = (e) => {
+    setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
+  }
 
+  const handleClick = async (e) => {
+    e.preventDefault()
+
+    try {
+      const res = await fetch(`${urlApi}/user/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(credentials)
+      })
+
+      const result = await res.json()
+
+      if(!res.ok)alert(result.message)
+
+      dispatch({type:"REGISTER_SUCCESS"})
+      navigate("/login")
+    } catch (error) {
+      alert(error.message)
+    }
+  }
   return (
     <section>
       <Container>
@@ -41,17 +70,17 @@ const Register = (e) => {
                   </FormGroup>
                   <FormGroup>
                     <input
-                      type="Password"
-                      placeholder="Password"
+                      type="email"
+                      placeholder="email"
                       required
-                      id="password"
+                      id="email"
                       onChange={handleChange}
                     />
                   </FormGroup>
                   <FormGroup>
                     <input
                       type="Password"
-                      placeholder="Password Confirmation"
+                      placeholder="Password"
                       required
                       id="password"
                       onChange={handleChange}

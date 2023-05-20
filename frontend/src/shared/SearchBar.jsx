@@ -5,15 +5,15 @@ import { Col, Form, FormGroup } from 'reactstrap'
 const SearchBar = () => {
 
     const locationRef = useRef('')
-    const dateRef = useRef('')
+    const distanceRef = useRef('')
     const maxGroupSizeRef = useRef(0)
 
     const searchHandler = () => {
         const location = locationRef.current.value
-        const date = dateRef.current.value
+        const distance = distanceRef.current.value
         const maxGroupSize = maxGroupSizeRef.current.value
 
-        if(location === "" || date === "" || maxGroupSize === ""){
+        if(location === "" || distance === "" || maxGroupSize === ""){
             return alert('All fields are required!')
         }
     }
@@ -35,8 +35,8 @@ const SearchBar = () => {
                             <i className="ri-calendar-line"></i>
                         </span>
                         <div>
-                            <h6>Date</h6>
-                            <input className="date" type="date" ref={dateRef}/>
+                            <h6>Distance</h6>
+                            <input type="number" placeholder="Distance k/m" ref={distanceRef}/>
                         </div>
                     </FormGroup>
                     <FormGroup className='d-flex gap-3 form-group form-group-last'>
