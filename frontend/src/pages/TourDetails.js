@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from 'react'
+import React, { useRef, useState, useContext, useCallback, useEffect } from 'react'
 import '../styles/pages/tour-details.css'
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap'
 import { useParams } from 'react-router-dom'
@@ -9,19 +9,33 @@ import Newsletter from '../shared/Newsletter'
 import useFetch from '../hooks/useFetch'
 import { urlApi } from '../utils/config'
 import { AuthContext } from '../context/AuthContext'
+import axios from "axios"
 
 const TourDetail = () => {
 
   const { id } = useParams()
   const reviewMsgRef = useRef(' ')
-
   const [tourRating, setTourRating] = useState(null)
-
+  const [data, setData] = useState(null)
   const { user } = useContext(AuthContext)
-
-  const { data: tour, loading, error } = useFetch(`${urlApi}/tours/${id}`)
-
-  const { photo, title, desc, price, reviews, address, city, distance, maxGroupSize } = tour
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const fetchData = () => {
+    setLoading(true)
+    axios
+      .get(`${urlApi}/tour/${id}`)
+      .then(function (response) {
+        setLoading(false)
+        setData(response.data.data)
+        console.log(response.data.data);
+      })
+      .catch(function (err) {
+        setError(true)
+        alert(err.message);
+      });
+  }; 
+  fetchData()
+  const { photo, title, desc, price, reviews, address, city, distance, maxGroupSize } = data
 
   const { totalRating, avgRating } = calculateAvgRating(reviews)
 
@@ -76,12 +90,12 @@ const TourDetail = () => {
           {!loading && !error && (
             <Row>
               <Col lg='8'>
-                <div className='tour__content'>
+                <div className='tou-content'>
                   <img src={photo} alt='' />
-                  <div className='tour__info'>
+                  <div className='tour-info'>
                     <h2>{title}</h2>
                     <div className='d-flex align-items-center gap-5'>
-                      <span className='tour__rating d-flex align-items-center gap-1'>
+                      <span className='tour-rating d-flex align-items-center gap-1'>
                         <i className='ri-star-fill' style={{ color: 'var(--secondary-color)' }}></i>
                         {avgRating === 0 ? null : avgRating}
                         {totalRating === 0 ? (
@@ -95,7 +109,7 @@ const TourDetail = () => {
                         {address}
                       </span>
                     </div>
-                    <div className='tour__extra-details'>
+                    <div className='tour-extra-details'>
                       <span>
                         <i className='ri-map-pin-2-line'></i>
                         {city}
@@ -116,10 +130,10 @@ const TourDetail = () => {
                     <h5>Description</h5>
                     <p>{desc}</p>
                   </div>
-                  <div className='tour__reviews mt-4'>
+                  <div className='tour-reviews mt-4'>
                     <h4>Reviews({reviews?.length} reviews)</h4>
                     <Form onSubmit={submitHandler}>
-                      <div className='d-flex align-item-center gap-3 mb-4 rating__group'>
+                      <div className='d-flex align-item-center gap-3 mb-4 rating-group'>
                         <span onClick={() => setTourRating(1)}>
                           1<i className='ri-star-s-fill'></i>
                         </span>
@@ -136,16 +150,16 @@ const TourDetail = () => {
                           5<i className='ri-star-s-fill'></i>
                         </span>
                       </div>
-                      <div className='review__input'>
+                      <div className='review-input'>
                         <input type='text' ref={reviewMsgRef} placeholder='share your thoughts' required />
-                        <button className='btn primary__btn text-white' type='submit'>
+                        <button className='btn primary-btn text-white' type='submit'>
                           Submit
                         </button>
                       </div>
                     </Form>
-                    <ListGroup className='user__reviews'>
+                    <ListGroup className='user-reviews'>
                       {reviews?.map((review, index) => (
-                        <div className='review__item' key={index}>
+                        <div className='review-item' key={index}>
                           <img src={avatar} alt='' />
                           <div className='w-100'>
                             <div className='d-flex align-items-center justify-content-between'>
@@ -167,7 +181,7 @@ const TourDetail = () => {
                 </div>
               </Col>
               <Col lg='4'>
-                <Booking tour={tour} avgRating={avgRating} />
+                <Booking tour={data} avgRating={avgRating} />
               </Col>
             </Row>
           )}

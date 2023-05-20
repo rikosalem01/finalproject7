@@ -10,5 +10,4 @@ router.put("/:id", verifyAuth, updateUser)
 router.delete("/:id", verifyAuth, deleteUser)
 router.get("/:id", verifyAuth, getSingleUser)
 router.get("/", verifyAdmin, getAllUser)
-
 export default router

@@ -1,14 +1,17 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react'
 import '../styles/shared/search-bar.css'
 import { Col, Form, FormGroup } from 'reactstrap'
+import { useNavigate } from 'react-router-dom'
+import { urlApi } from '../utils/config'
 
 const SearchBar = () => {
 
     const locationRef = useRef('')
-    const distanceRef = useRef('')
+    const distanceRef = useRef(0)
     const maxGroupSizeRef = useRef(0)
+    const navigate = useNavigate()
 
-    const searchHandler = () => {
+    const searchHandler = async () => {
         const location = locationRef.current.value
         const distance = distanceRef.current.value
         const maxGroupSize = maxGroupSizeRef.current.value
@@ -16,6 +19,14 @@ const SearchBar = () => {
         if(location === "" || distance === "" || maxGroupSize === ""){
             return alert('All fields are required!')
         }
+
+        const res = await fetch(`${urlApi}/tour/search/getTourBySearch?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`)
+
+        if(!res.ok) alert("Something went wrong")
+
+        const result = await res.json()
+
+        navigate(`/tours/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`, {state: result.data})
     }
     return (
         <Col lg='12'>
@@ -32,11 +43,11 @@ const SearchBar = () => {
                     </FormGroup>
                     <FormGroup className='d-flex gap-3 form-group form-group-fast'>
                         <span>
-                            <i className="ri-calendar-line"></i>
+                            <i className="ri-map-pin-time-line"></i>
                         </span>
                         <div>
                             <h6>Distance</h6>
-                            <input type="number" placeholder="Distance k/m" ref={distanceRef}/>
+                            <input type="number" placeholder='Distance k/m' ref={distanceRef}/>
                         </div>
                     </FormGroup>
                     <FormGroup className='d-flex gap-3 form-group form-group-last'>
