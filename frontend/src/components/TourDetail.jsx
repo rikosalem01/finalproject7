@@ -44,38 +44,7 @@ const TourDetail = () => {
     e.preventDefault()
 
     const reviewText = reviewMsgRef.current.value
-
-    try {
-      if (!user) {
-        alert('Please login to write a review')
-      }
-
-      const reviewObj = {
-        username: user?.username,
-        reviewText,
-        rating: tourRating
-      }
-
-      const res = await fetch(`${urlApi}/review/${id}`, {
-
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify(reviewObj)
-      })
-      const result = await res.json()
-      console.log(result)
-      if (!res.ok) {
-        return alert(result.message)
-      }
-    } catch (error) {
-      alert(error.message)
-    }
   }
-
- 
   return (
     <>
       <section>

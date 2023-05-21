@@ -75,27 +75,27 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .login__img {
+  .login-img {
     display: none;
   }
 
-  .login__form {
+  .login-form {
     width: 70%;
     margin: auto;
   }
 
-  .login__container {
+  .login-container {
     padding-bottom: 3rem;
     margin-top: 70px;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .login__form {
+  .login-form {
     width: 100%;
   }
 
-  .login__container {
+  .login-container {
     padding-bottom: 1rem;
   }
 }

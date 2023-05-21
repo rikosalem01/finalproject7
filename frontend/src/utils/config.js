@@ -1,1 +1,2 @@
-export const urlApi = 'http://localhost:8000/api'
+export const urlApi = "http://localhost:8000/api";
+

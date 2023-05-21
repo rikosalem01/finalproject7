@@ -1,65 +1,67 @@
-.footer{
-    padding-top: 70px;
-    padding-bottom: 30px;
+footer {
+  padding-top: 70px;
+  padding-bottom: 30px;
 }
 
-.footer .logo img{
-    width: 50%;
-    margin-bottom: 1rem;
+.logo2 img {
+  width: 50%;
+  margin-bottom: 1rem;
 }
 
-.footer .logo p{
-    color: var(--text-color);
+.footer-sider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.social-links span a{
-    text-decoration: none;
-    color: var(--heading-color);
-    font-size:1.2rem;
+.social-links span a {
+  text-decoration: none;
+  color: var(--heading-color);
+  font-size: 1.2rem;
 }
-.footer-link-title{
-    color: var(--heading-color);
-    margin-bottom: 1rem;
+.footer-link-title {
+  color: var(--heading-color);
+  margin-bottom: 1rem;
 }
 
-.footer-quick-links li a{
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1.1rem;
+.footer-quick-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
 }
 
 .footer-quick-links h6 span i {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
 }
 
-.copyright{
-    color: var(--text-color);
-    font-size: 1rem;
+.copyright {
+  color: var(--text-color);
+  font-size: 1rem;
 }
+
 @media only screen and (max-width: 844px) {
-    .logo2 img {
-      margin-top: 50px;
-      display: none;
-    }
-    footer {
-      font-size: 0.75rem;
-      width: 73%;
-    }
-  
-    .footer-sider {
-      display: flex;
-      justify-content: space-between;
-    }
-  
-    .footer-link-title {
-      display: flex;
-      margin-bottom: 0px;
-      font-size: 15px;
-    }
-  
-    .footer-quick-links .footer-link {
-      margin-top: 0px;
-      font-size: 12px;
-    }
+  .logo2 img {
+    margin-top: 50px;
+    display: none;
   }
+  footer {
+    font-size: 0.75rem;
+  }
+
+  .footer-quick-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-link-title {
+    display: flex;
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+
+  .footer-quick-links .footer-link {
+    margin-top: 0px;
+    font-size: 12px;
+  }
+}
