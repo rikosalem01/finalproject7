@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext, useCallback, useEffect } from 'react'
+import React, { useRef, useState, useContext, } from 'react'
 import '../styles/pages/tour-details.css'
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap'
 import { useParams } from 'react-router-dom'
@@ -6,7 +6,6 @@ import calculateAvgRating from '../utils/avgRating'
 import avatar from '../assets/images/components/avatar.jpg'
 import Booking from '../components/Booking'
 import Newsletter from '../shared/Newsletter'
-import useFetch from '../hooks/useFetch'
 import { urlApi } from '../utils/config'
 import { AuthContext } from '../context/AuthContext'
 import axios from "axios"

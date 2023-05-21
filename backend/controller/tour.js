@@ -3,30 +3,34 @@ import { Op } from 'sequelize';
 
 
 export const getAllTour = async (req, res) => {
-         const page = parseInt(req.query.page);     
-         const pageSize = 8      
-         try {         
-            const totalCount = await Tour.count();         
-            const totalPages = Math.ceil(totalCount / pageSize);          
-            const tours = await Tour.findAll({             
-                include: 'reviews',             
-                offset: page * pageSize,             
-                limit: pageSize         
-            });          
-            res.status(200).json({            
-                 success: true,             
-                 count: tours.length,             
-                 totalPages: totalPages,             
-                 currentPage: page,             
-                 message: "Successful",             
-                 data: tours         
-                });     
-            } catch (err) {         
-                res.status(500).json({             
-                    success: false,             
-                    message: err.message,         
-                });     
-            } };
+    const page = parseInt(req.query.page);
+    const pageSize = 8
+
+    try {
+        const totalCount = await Tour.count();
+        const totalPages = Math.ceil(totalCount / pageSize);
+
+        const tours = await Tour.findAll({
+            include: 'reviews',
+            offset: page * pageSize,
+            limit: pageSize
+        });
+
+        res.status(200).json({
+            success: true,
+            count: tours.length,
+            totalPages: totalPages,
+            currentPage: page,
+            message: "Successful",
+            data: tours
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: err.message,
+        });
+    }
+};
 
 export const getSingleTour = async (req, res) => {
     const id = req.params.id
