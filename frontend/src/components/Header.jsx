@@ -1,8 +1,9 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useContext} from 'react'
 import { Container, Row, Button } from 'reactstrap'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/images/components/logo.png'
 import '../styles/components/header.css'
+import { AuthContext } from '../context/AuthContext'
 
 const nav__links = [
   {
@@ -19,9 +20,16 @@ const nav__links = [
   }
 ]
 
-const Header = () => {
+const Header = () => { 
 
   const headerRef = useRef(null)
+  const menuRef = useRef(null)
+  const navigate = useNavigate()
+  const {user,dispatch} = useContext(AuthContext)
+  const logout = () => {
+    dispatch({type:'LOGOUT'})
+    navigate('/')
+  }
 
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
@@ -37,6 +45,8 @@ const Header = () => {
     stickyHeaderFunc()
     return window.removeEventListener('scroll', stickyHeaderFunc)
   })
+
+  const toggleMenu = () => menuRef.current.classList.toggle('show-menu')
   return (
     <header className='header' ref={headerRef}>
       <Container>
@@ -48,7 +58,7 @@ const Header = () => {
             </div>
             {/* logo end */}
             {/* menu start */}
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <ul className='menu d-flex align-items-center gap-5'>
                 {nav__links.map((item, index) => (
                   <li className='nav-item' key={index}>
@@ -61,15 +71,27 @@ const Header = () => {
             </div>
             {/* menu end */}
             <div className='nav-right d-flex align-items-center gap-4'>
-              <div className='nav-btn d-flex align-items-center gap-4'>
-                <Button className='btn secondary-btn'>
+              <div className='nav-btns d-flex align-items-center gap-4'>
+                {user ? (
+                  <>
+                    <h5 className='mb-0'>Hi, {user.dataValues.username}</h5>
+                    <Button className='btn btn-danger' onClick={logout}>
+                      Logout
+                    </Button>
+                  </>
+                ): (
+                  <>
+                  <Button className='btn secondary-btn'>
                   <Link to='/login'>Login</Link>
                 </Button>
                 <Button className='btn primary-btn'>
                   <Link to='/register'>Register</Link>
                 </Button>
+                  </>
+                )}
+               
               </div>
-              <span className='mobile-menu'>
+              <span className='mobile-menu' onClick={toggleMenu}>
                 <i className='ri-menu-line'></i>
               </span>
             </div>

@@ -1,39 +1,44 @@
 import Tour from "../model/tour.js"
+import { Op } from 'sequelize';
 
 
 export const getAllTour = async (req, res) => {
-    try {
-        const tours = await Tour.findAll({
-            include: 'reviews'
-        })
+    const page = parseInt(req.query.page);
+    const pageSize = 8
 
-        if (!tours) {
-            return res.status(404).json({
-                message: "No Tour Found"
-            })
-        }
+    try {
+        const totalCount = await Tour.count();
+        const totalPages = Math.ceil(totalCount / pageSize);
+
+        const tours = await Tour.findAll({
+            include: 'reviews',
+            offset: page * pageSize,
+            limit: pageSize
+        });
 
         res.status(200).json({
             success: true,
             count: tours.length,
-            message: "This is List Tour",
+            totalPages: totalPages,
+            currentPage: page,
+            message: "Successful",
             data: tours
-        })
-    } catch (error) {
-        res.status(404).json({
+        });
+    } catch (err) {
+        res.status(500).json({
             success: false,
-            message: error.message
-        })
+            message: err.message,
+        });
     }
-}
+};
 
 export const getSingleTour = async (req, res) => {
     const id = req.params.id
 
     try {
-        const tour = await Tour.findByPk(id)
+        const tour = await Tour.findByPk(id, {include: 'reviews'})
 
-        if(!tour){
+        if (!tour) {
             return res.status(404).json({
                 message: "Not Found"
             })
@@ -108,7 +113,7 @@ export const deleteTour = async (req, res) => {
             success: true,
             message: "Successfully deleted!"
         })
-    } catch(error){
+    } catch (error) {
         res.status(500).json({
             success: false,
             message: error.message
@@ -116,3 +121,80 @@ export const deleteTour = async (req, res) => {
     }
 }
 
+export const getTourBySearch = async (req, res) => {
+    const city = req.query.city;
+    const distance = parseInt(req.query.distance);
+    const maxGroupSize = parseInt(req.query.maxGroupSize);
+  
+    try {
+      const tours = await Tour.findAll({
+        where: {
+          [Op.and]: [
+            { city: { [Op.like]: `%${city}%` } },
+            { distance: { [Op.gte]: distance } },
+            { maxGroupSize: { [Op.gte]: maxGroupSize } },
+          ],
+        },
+        include: "reviews",
+      });
+  
+      if (tours.length > 0) {
+        res.status(200).json({
+          success: true,
+          count: tours.length,
+          message: "Successful",
+          data: tours,
+        });
+      } else {
+        res.status(404).json({
+          success: false,
+          message: "Not Found!",
+        });
+      }
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: "Internal Server Error",
+      });
+    }
+  };
+
+export const getFeaturedTour = async (req, res) => {
+
+    try {
+        const tours = await Tour.findAll({
+            where: {
+                featured: true
+            },
+            limit: 8,
+            include: 'reviews'
+        });
+
+        res.status(200).json({
+            success: true,
+            message: "Successful",
+            data: tours
+        })
+    } catch (err) {
+        res.status(404).json({
+            success: false,
+            message: "Not Found",
+        })
+    }
+}
+
+export const getTourCount = async (req, res) => {
+    try {
+        const tourCount = await Tour.count()
+
+        res.status(200).json({
+            success: true,
+            data: tourCount
+        })
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch tour count."
+        })
+    }
+}
